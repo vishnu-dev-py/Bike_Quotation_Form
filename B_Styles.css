@@ -1,0 +1,78 @@
+#outer{
+    justify-content: center;
+    padding-top: 50px;
+    padding-left: 100px;
+    padding-right: 100px;
+
+
+}
+
+body{
+
+    background-color: #d0c8c8;
+}
+
+label{
+    color: black;
+    font-size: 40px;
+    padding-left: 25px;
+}
+
+input{
+    border-radius: 15px;
+    font-size: 20px;
+
+}
+
+select{
+    border-radius: 10px;
+    font-size: 20px;
+    padding-left: 15px;
+    padding-right: 15px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+}
+
+#com{
+    background-image: url("bike.jpg");
+    border: grey 5px solid;
+    border-radius: 20px;
+    justify-content: space-between;
+    padding-top: 30px;
+    
+
+}
+
+#btns{
+    padding-left: 150px;
+    padding-top: 30px;
+    padding-bottom: 20px;
+}
+
+#submit{
+    border-radius: 10px;
+    padding: 10px 30px;
+    font-size: 20px;
+    background-color: deepskyblue;
+    cursor: pointer;
+}
+#cancel{
+    border-radius: 10px;
+    padding: 10px 30px;
+    font-size: 20px;
+    background-color: #d0c8c8;
+    cursor: pointer;
+}
+
+
+#com.input{
+    padding-left: 50px;
+
+
+}
+
+
+
+
+
+

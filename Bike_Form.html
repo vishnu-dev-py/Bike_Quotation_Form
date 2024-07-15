@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="B_Styles.css">
+    <meta charset="UTF-8">
+    <title>Bike Quotation</title>
+</head>
+<body>
+<div id="outer">
+    <div id="com">
+        <label for="name">Name :</label>
+        <input name="name" id="name" type="text">
+        <br><br>
+        <label for="mno">Mobile No:</label>
+        <input name="mno" id="mno" type="text">
+        <br><br>
+        <label for="mail">Mail :</label>
+        <input name="mail" id="mail" type="email">
+        <br><br>
+        <label for="payment">Payment Method:</label>
+        <select name="payment" id="payment">
+            <option value="EMI">EMI</option>
+            <option value="Cash">Cash</option>
+        </select>
+        <br><br>
+        <label for="city">City :</label>
+        <input type="text" id="city" name="city">
+        <br><br>
+        <label for="bName">Bike Name :</label>
+        <input type="text" id="bName" name="bName">
+        <br><br>
+        <label for="make">Make :</label>
+        <input type="text" id="make" name="make">
+        <br><br>
+        <div id="btns">
+            <button id="submit" onclick="submit()">Submit</button>
+            <button id="cancel">Cancel</button>
+        </div>
+    </div>
+</div>
+
+<div>
+    <table class="table table-dark table-striped">
+
+</table>
+</div>
+</body>
+</html>
+<script>
+    function submit() {
+        var name = document.getElementById('name').value
+        var mno = document.getElementById('mno').value
+        var mail = document.getElementById('mail').value
+        var payment = document.getElementById('payment').value
+        var bName = document.getElementById('bName').value
+        var make = document.getElementById('make').value
+
+        var option = {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify({
+                name: name,
+                mno: mno,
+                mail:mail,
+                payment: payment,
+                bName: bName,
+                make: make
+            })
+        }
+        fetch('http://localhost:8000/submit', option)
+    .then(response => response.json())
+    .then(data => {
+    alert(data)
+        clear_form()
+    })
+    }
+
+    function clear_form(){
+        document.getElementById('name').value=""
+        document.getElementById('mno').value=""
+        document.getElementById('mail').value=""
+        document.getElementById('payment').value=""
+        document.getElementById('bName').value=""
+        document.getElementById('make').value=""
+    }
+</script>
